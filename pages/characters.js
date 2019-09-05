@@ -60,13 +60,16 @@ function Home() {
                 <p>Development is a combination of education, social advantage, wealth and unique abilities.</p>
                 <p>Most of it is the former: the set of skills and training you have achieved and/or been given.</p>
                 <p>To determine your character's abilities, draw five cards, one at a time,
-                    and take the abilities they resolve to. Note some cards have a different "count";
-                    if you draw a Jack, for instance (-1) you get to draw an extra card.
+                    and take the abilities they resolve to. Cards that modify your basic abilities
+                    have a different "count"; if you draw a Jack, for instance (-1) you get to two extra cards.
                 </p>
 
-                <h3>Contradictory cards</h3>
-                <p>Some cards cancel each other out. You can only have one face card of any given suit;
-                    you can choose which one to discard, but you can only use one of them. </p>
+                <h3>Maximum quality cards</h3>
+                <p>You can only have two modified Qualities. therefore, you can have at most two Jacks or Queens,
+                OR one King (which modifies two Qualities) or a King and a Jack (modifying two Qualifiers).
+                Since Jacks and other face cards cancel each other out, if you have a Jack and a face card of the
+                    same suit, redraw one of those cards (your choice).
+                </p>
 
                 <table className="chart">
                     <thead>
@@ -117,15 +120,17 @@ function Home() {
                         <td>High (+1) Will</td>
                     </tr>
                     <tr>
-                        <th>King(3 cards)</th>
-                        <td>Great (+2) Strength</td>
-                        <td>Great (+2) Speed</td>
-                        <td>Great (+2) Mind</td>
-                        <td>Great (+2) Will</td>
+                        <th>King(2 cards)</th>
+                        <td>Great (+2) Strength<br /> Low (-1) Other<sup>*</sup></td>
+                        <td>Great (+2) Speed<br /> Low (-1) Other<sup>*</sup></td>
+                        <td>Great (+2) Mind<br /> Low (-1) Other<sup>*</sup></td>
+                        <td>Great (+2) Will<br /> Low (-1) Other<sup>*</sup></td>
                     </tr>
                     </tbody>
                 </table>
 
+                <p><sup>*</sup> Unless you already drew a Jack, draw an other card and treat it as a Jack.
+                    Redraw if its the same suit as the king.</p>
 
                 <h3>Ability and Training</h3>
                 <p>Your numeric rank in an area <i>you have training in</i>
