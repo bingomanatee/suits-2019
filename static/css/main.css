@@ -177,6 +177,15 @@ i:after {
   margin-right: 0.5rem;
 }
 
+.calc > div {
+  white-space: nowrap;
+  text-align: right;
+}
+.calc .sum {
+  border-top: 1px solid gray;
+  padding-top: 3px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
@@ -656,6 +665,13 @@ h3 {
 table.chart td, table.chart th {
   min-width: 100px;
   padding: 1rem;
+}
+table.chart .compact {
+  font-size: 0.8rem;
+}
+table.chart .compact td, table.chart .compact th {
+  min-width: 50px;
+  padding: 0.5rem;
 }
 table.chart thead th {
   font-family: LotaGrotesqueAlt3-Bold, "Helvetica Neue", sans-serif;
