@@ -24,4 +24,4 @@ function Medical() {
   </div>
 }
 
-export default Home
+export default Medical
