@@ -179,13 +179,16 @@ i:after {
 }
 
 .calc {
+  white-space: nowrap;
   > div {
     white-space: nowrap;
     text-align: right;
   }
   .sum {
-    border-top: 1px solid gray;
-    padding-top: 3px;
+    color: $DARK_BLUE;
+    &:before {
+      content: ':'
+    }
   }
 }
 
@@ -635,13 +638,6 @@ table.chart {
     min-width: 100px;
     padding: 1rem;
   }
-  & .compact {
-    font-size: 0.8rem;
-    td, th {
-      min-width: 50px;
-      padding: 0.5rem;
-    }
-  }
 
   thead {
     th {
@@ -663,5 +659,14 @@ table.chart {
       text-align: right;
       white-space: nowrap;
     }
+  }
+}
+
+
+table.chart.compact {
+  font-size: 0.8rem;
+  td, th {
+    min-width: 50px;
+    padding: 0.25rem;
   }
 }

@@ -10,7 +10,7 @@ const values = {
     'jh': {will: -1, cost: -1},
     'qc': {body: 1, cost: 2},
     'qs': {speed: 1, cost: 2},
-    'qd': {speed: 1, cost: 2},
+    'qd': {mind: 1, cost: 2},
     'qh': {will: 1, cost: 2},
     'kc': {body: 2, cost: 3},
     'ks': {speed: 2, cost: 3},
@@ -50,7 +50,7 @@ function N({children}) {
 const Describe = ({card}) => {
     const Suit = suitMap[card[1]];
     const name = nameMap[card[0]];
-    return <span>{name}<br/><Suit/></span>
+    return <span>{name}<Suit/></span>
 }
 
 function Redraw() {
@@ -75,11 +75,11 @@ function Resolve({first, second}) {
 
     console.log('first: ', first, values[first], 'second', second, values[second], 'status:', status);
     return <div class="calc">
-        {status.body ? <span>B <N>{status.body}</N>,</span> : ''}
-        {status.speed ? <span>S <N>{status.speed}</N>,</span> : ''}
-        {status.mind ? <span>M <N>{status.mind}</N>,</span> : ''}
-        {status.will ? <span>W <N>{status.will}</N>,</span> : ''}
-        <div class="sum"><b>{status.cost} cds</b></div>
+        {status.body ? <span>B <N>{status.body}</N>{' '}</span> : ''}
+        {status.speed ? <span>S <N>{status.speed}</N>{' '}</span> : ''}
+        {status.mind ? <span>M <N>{status.mind}</N>{' '}</span> : ''}
+        {status.will ? <span>W <N>{status.will}</N>{' '}</span> : ''}
+        <span class="sum"><b>({status.cost})</b></span>
     </div>
 }
 
@@ -150,7 +150,7 @@ function Home() {
                     have a different "cost"; if you draw a Jack, for instance (-1) you get to two extra cards.
                 </p>
 
-                <table className="chart compact">
+                <table className="chart">
                     <thead>
                     <tr>
                         <th>&nbsp;</th>
@@ -231,7 +231,7 @@ function Home() {
                     </li>
                 </ul>
 
-                <table className="chart">
+                <table className="chart compact">
                     <thead>
                     <tr>
                         <td>First Card</td>
