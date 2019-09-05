@@ -20,7 +20,7 @@ function PageTitle(props) {
     </span>
       <span className={scn(active, 'characters')}><a href="/characters">Characters</a></span>
       <span className={scn(active, 'contests')}><a href="/contests">Contests</a></span>
-      <span className={scn(active, 'adventures')}><a href="/adventures">Adventures</a></span>
+      <span className={scn(active, 'adventure')}><a href="/adventure">Adventures</a></span>
     </div>
     <div id="header-title">
       <div className="lead-in not-small">
