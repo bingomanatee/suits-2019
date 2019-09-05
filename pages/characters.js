@@ -132,7 +132,9 @@ function Home() {
                     is the sum of the base quality and your general training and specialty in it. A note on vocabulary:
                 an area of training -- aka "College" or "field" -- is a broad set of skills around related tasks.
                 Each contain Specializations that are smaller focused areas within a training school. These are called
-                    "Skills" in these rules, which is inexact; they are actaully a small cluster of skills.
+                    "Skills" in these rules, which is inexact; they are a small cluster of skills. There is no way in Suits
+                    to train and focus on a truly singular skill like "Physics" - you can train in "Science" which includes it
+                    but that is as fine grained as these rules get.
                 </p>
                 <ul>
                     <li>If you take a general training you have +1 in all the skills it includes.</li>
