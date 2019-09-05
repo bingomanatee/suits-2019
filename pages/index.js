@@ -11,12 +11,14 @@ function Home() {
         <h1>SUITS: a quick playing card based RPG </h1>
         <p>
           SUITS is a "D & D" style RPG . Players generate <a href="/characters">Characters</a>
-          and act out an <a href="/adventures">adventure</a> under the direction of a storyteller ("ref").
+          and act out an <a href="/adventures">adventure</a> under the direction of a storyteller ("ref"). It uses
+          a conventional deck of playing cards to create characters and resolve <a href="/contests">Contests</a>
+          (two, ideally)
         </p>
 
         <p>
           SUITS is not a "Magic" style contest; winning and defeat are subjective and players are not
-          (by default) pitted against each other .
+          (by default) pitted against each other.
         </p>
 
         <p>
