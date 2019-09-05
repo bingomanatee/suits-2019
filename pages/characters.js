@@ -211,11 +211,12 @@ function Home() {
                 <h3>Maximum quality cards</h3>
                 <ul>
                     <li>
-                        You can only have two modified Qualities.
+                        You can only have two modified Qualities, and they must be different ones.
                     </li>
 
                     <li>
-                        You cannot have two face cards of the same suit.
+                        You cannot have two face cards of the same suit. If you draw a face card of the same suit, discard one of them(your choice). discard and redraw
+                        your third or subsequent face cards.
                     </li>
 
                     <li>
@@ -223,9 +224,10 @@ function Home() {
                     </li>
 
                     <li>
-                        If you draw a face card of the same suit, discard one of them(your choice). discard and redraw
-                        your third or subsequent face cards.
+                        You cannot have a King and a Queen. You can have a King and a Jack, two Queens,
+                        or a Queen and a Jack.
                     </li>
+
                     <li>
                         <sup>*</sup> If you draw a King, the next card is treated as if it were a Jack.
                     </li>
