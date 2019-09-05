@@ -1,0 +1,649 @@
+@import 'constants.scss';
+
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+.small, .medium, .large {
+  display: none;
+}
+
+@include media-medium {
+  .medium {
+    display: block;
+  }
+}
+
+@include media-small {
+  .small {
+    display: block;
+  }
+  .not-small {
+    display: none;
+  }
+}
+
+@include media-large {
+  .large {
+    display: block;
+  }
+  .not-large {
+    display: none;
+  }
+}
+
+header {
+  display: grid;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background-repeat: no-repeat;
+  @include media-medium-and-small {
+    background: -moz-linear-gradient(180deg, $BLUE $gradientStop1, $RED $gradientStop2med, $RED $gradientStop3med, transparentize(white, 1) 100%);
+    background: -webkit-linear-gradient(180deg, $BLUE $gradientStop1, $RED $gradientStop2med, $RED $gradientStop3med, transparentize(white, 1) 100%);
+    background: linear-gradient(180deg, $BLUE $gradientStop1, $RED $gradientStop2med, $RED $gradientStop3med, transparentize(white, 1) 100%);
+  }
+
+
+  @include media-large {
+    background: -moz-linear-gradient(180deg, $BLUE $gradientStop1, $RED $gradientStop2, white $gradientStop3, transparentize(white, 1) 100%);
+    background: -webkit-linear-gradient(180deg, $BLUE $gradientStop1, $RED $gradientStop2, white $gradientStop3, transparentize(white, 1) 100%);
+    background: linear-gradient(180deg, $BLUE $gradientStop1, $RED $gradientStop2, white $gradientStop3, transparentize(white, 1) 100%);
+
+    grid-template-rows: [top] $gutterHeight [menu-top] $headerMenuHeight [main-row] $headerMainHeight [bottom];
+    grid-template-columns: [left] $gutterWidth [logo-col] $logoWidth [main-column] auto [main-column-end] $gutterWidth [right];
+  }
+
+  @include media-medium {
+    grid-template-rows: [top] $gutterHeight [menu-top] $headerMenuHeightMedium [main-row] $headerMainHeight [bottom];
+    grid-template-columns: [left] $gutterWidthSmall [logo-col] $logoWidthSmall [main-column] auto [main-column-end] $gutterWidthSmall [right];
+  }
+
+  @include media-small {
+    grid-template-rows: [top] $gutterHeight [menu-top] $headerMenuHeightMedium [main-row] 0 [bottom];
+    grid-template-columns: [left] $gutterWidthSmall [logo-col] 1px [main-column] auto [main-column-end] $gutterWidthSmall [right];
+  }
+}
+
+main {
+  margin: $gutterHeight $gutterWidth;
+}
+
+article {
+  max-width: $responsiveMedium;
+}
+
+#header-menu {
+  grid-column-start: main-column;
+  grid-column-end: main-column-end;
+  grid-row-start: menu-top;
+  grid-row-end: main-row;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+
+  span {
+    font-family: $BODY_FONT;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    color: white;
+
+    &.active {
+      background-color: $ALPHA_WHITE;
+    }
+
+    &:hover {
+      color: $DARK_BLUE;
+    }
+
+    @include media-medium-and-small {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.5rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+      border: none;
+      outline: none !important;
+    }
+  }
+}
+
+#header-title {
+  grid-column-start: main-column;
+  grid-column-end: main-column-end;
+  grid-row-start: main-row;
+  grid-row-end: bottom;
+
+  .lead-in {
+    font-family: LotaGrotesqueAlt3-Regular, "Helvetica Neue", sans-serif;
+    color: $RED;
+    font-size: $BODY_FONT_SIZE;
+    line-height: 1;
+    @include media-medium-and-small {
+      font-size: $BODY_FONT_SIZE_MEDIUM;
+    }
+  }
+
+  .title {
+    font-family: $LOTA_LIGHT;
+    font-size: $HEADER_HEIGHT_MEDIUM;
+    line-height: 1;
+    text-transform: uppercase;
+    color: $BIG_TEXT_COLOR;
+    @include media-medium-and-small {
+      font-size: $HEADER_HEIGHT_MEDIUM;
+    }
+  }
+}
+
+#logo {
+  grid-column-start: logo-col;
+  grid-column-end: main-column;
+  grid-row-start: top;
+  grid-row-end: bottom;
+
+  @media (max-width: #{$responsiveSmall}) {
+    display: none;
+  }
+}
+
+html {
+  color: black;
+  font-size: 20px;
+  background: white;
+  height: 100vh;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: $BODY_FONT_SIZE/2;
+  font-family: $LOTA_REGULAR;
+  font-size: $BODY_FONT_SIZE;
+  @media screen and (max-width: #{$responsiveMedium}) {
+    font-size: $BODY_FONT_SIZE_MEDIUM;
+    margin-bottom: $BODY_FONT_SIZE_MEDIUM/2;
+  }
+}
+
+i {
+  display: inline-block;
+}
+i:after {
+  margin-right: 0.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: 130%;
+  font-size: $HEADER_HEIGHT;
+  margin-bottom: $HEADER_HEIGHT/2;
+  font-family: $HEADER_FONT;
+  font-weight: $HEADER_WEIGHT;
+
+  @include media-medium-and-small {
+    font-size: $HEADER_HEIGHT_MEDIUM;
+    margin-bottom: $HEADER_HEIGHT_MEDIUM/2;
+  }
+}
+
+h2 {
+  font-size: $HEADER_HEIGHT_2;
+  font-weight: $HEADER_WEIGHT_2;
+  margin-bottom: $HEADER_HEIGHT_2/2;
+  @include media-medium-and-small {
+    font-size: $HEADER_HEIGHT_MEDIUM_2;
+    margin-bottom: $HEADER_HEIGHT_MEDIUM_2/2;
+  }
+}
+
+h3, h4, h5, h6 {
+  font-size: $HEADER_HEIGHT_3;
+  font-weight: $HEADER_WEIGHT_3;
+  margin-bottom: $HEADER_HEIGHT_3/2;
+  @include media-medium-and-small {
+    font-size: $HEADER_HEIGHT_MEDIUM_3;
+    margin-bottom: $HEADER_HEIGHT_MEDIUM_3/2;
+  }
+}
+
+/*! HTML5 Boilerplate v7.2.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+.five-by-five {
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  grid-template-columns: [left] auto [data] repeat(4, 1fr [col]) [right];
+  grid-template-rows: [top] auto [row] repeat(4, auto [row]) [bottom];
+  grid-auto-rows: auto;
+  grid-auto-columns: auto;
+}
+
+.red {
+  color: $RED;
+}
+
+.black {
+  color: black;
+}
+
+.five-by-five .rh {
+  @include rh
+}
+
+.five-by-five .ur {
+  @include rh;
+  @include fbf(0, 0)
+}
+
+.five-by-five .rh1 {
+  @include rh;
+  font-weight: bold;
+  @include fbf(1, 0)
+}
+
+.five-by-five .rh2 {
+  @include rh;
+  font-weight: bold;
+  @include fbf(2, 0)
+}
+
+.five-by-five .rh3 {
+  @include rh;
+  font-weight: bold;
+  @include fbf(3, 0)
+}
+
+.five-by-five .rh4 {
+  @include rh;
+  font-weight: bold;
+  @include fbf(4, 0)
+}
+
+.five-by-five .h1 {
+  font-weight: bold;
+  @include fbf(0, 1)
+}
+
+.five-by-five .h2 {
+  font-weight: bold;
+  @include fbf(0, 2)
+}
+
+.five-by-five .h3 {
+  font-weight: bold;
+  @include fbf(0, 3)
+}
+
+.five-by-five .h4 {
+  font-weight: bold;
+  @include fbf(0, 4)
+}
+
+.five-by-five .c1-1 {
+  @include fbf(1, 1)
+}
+
+.five-by-five .c1-2 {
+  @include fbf(1, 2)
+}
+
+.five-by-five .c1-3 {
+  @include fbf(1, 3)
+}
+
+.five-by-five .c1-4 {
+  @include fbf(1, 4)
+}
+
+.five-by-five .c2-1 {
+  @include fbf(2, 1)
+}
+
+.five-by-five .c2-2 {
+  @include fbf(2, 2)
+}
+
+.five-by-five .c2-3 {
+  @include fbf(2, 3)
+}
+
+.five-by-five .c2-4 {
+  @include fbf(2, 4)
+}
+
+.five-by-five .c3-1 {
+  @include fbf(3, 1)
+}
+
+.five-by-five .c3-2 {
+  @include fbf(3, 2)
+}
+
+.five-by-five .c3-3 {
+  @include fbf(3, 3)
+}
+
+.five-by-five .c3-4 {
+  @include fbf(3, 4)
+}
+
+.five-by-five .c4-1 {
+  @include fbf(4, 1)
+}
+
+.five-by-five .c4-2 {
+  @include fbf(4, 2)
+}
+
+.five-by-five .c4-3 {
+  @include fbf(4, 3)
+}
+
+.five-by-five .c4-4 {
+  @include fbf(4, 4)
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+* Extends the .sr-only class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/*  **********
+   example styling
+ */
+
+.form-row {
+  padding: 1rem;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+
+  label {
+    font-weight: bold;
+  }
+}
+
+.form-feedback {
+  padding: 1rem;
+  font-size: 0.8rem;
+}
+
+table.chart {
+  td, th {
+    min-width: 100px;
+    padding: 1rem;
+  }
+
+  thead {
+    th {
+      font-family: $LOTA_BOLD;
+      font-weight: bold;
+      span {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: end;
+      }
+    }
+  }
+
+  tbody {
+    th {
+      font-family: $LOTA_BOLD;
+      font-weight: bold;
+      text-align: right;
+      white-space: nowrap;
+    }
+  }
+}
