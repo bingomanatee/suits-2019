@@ -250,15 +250,21 @@ function Home() {
                     you can train in "Science" which includes it but that is as fine grained as these rules get.
                 </p>
                 <ul>
-                    <li>If you take a general training you have +1 in all the skills it includes. This costs 3 points.</li>
+                    <li>If you take a general training you have +1 in all the skills it includes. This costs 3 points.
+                    </li>
                     <li>
-                        Optionally you can choose to <a name="specialist"/><b>Specialize</b>; you are +2 in <i>one</i> skill but no better
+                        Optionally you can choose to <a name="specialist"/><b>Specialize</b>; you are +2
+                        in <i>one</i> skill but no better
                         at other skills in an area of training than anyone else. Specialization costs 2 points.
                     </li>
                     <li>Or, you can take +1 in one skill for 1 point - <b>"Minor Specialization"</b>.</li>
                     <li>
-                         Optionally for 6 points you can be a trained specialist,
+                        Optionally for 6 points you can be a trained specialist,
                         giving you +1 in all skill areas in the training and +3 in one skill.
+                    </li>
+                    <li>
+                        Or for 5 points you can be a trained Minor Specialist,
+                        giving you +1 in all skill areas in the training and +2 in one skill.
                     </li>
                 </ul>
                 <p> You can act in areas you don't have training, at a -1 penalty. However,
@@ -274,10 +280,11 @@ function Home() {
                     specialty.
                 </p>
                 <p>
-                    A below average character is limited in their ability. any training card is <i>automatically</i>
-                    a specialization, and give them only +1 in a single skill. (they don't have the ability to
-                    focus on general training or convince anyone to train them across the board in a variety of
-                    skills.)
+                    <sup>**</sup> A below average character is limited in their ability.
+                    Any training card is <i>automatically</i>a specialization,
+                    and give them only +1 in a single skill.  I.e, if you have a below average
+                    base Quality, Minor Specialization and Training are not options for you, and specialized
+                    training has less of an impact.
                 </p>
                 <table class="chart">
                     <thead>
@@ -285,51 +292,75 @@ function Home() {
                         <td><span>Base Quality</span></td>
                         <th><span>Untrained <br/>(contest)</span></th>
                         <th><span>Untrained</span></th>
+                        <th><span>Trained/out of focus</span></th>
                         <th><span>Trained</span></th>
                         <th><span>Specialist</span></th>
-                        <th><span>Trained <br/>Specialist</span></th>
+                        <th><span>Trained Specialist</span></th>
+                    </tr>
+                    <tr>
+                        <td><span>&nbsp;</span></td>
+                        <th><span>&nbsp;</span></th>
+                        <th><span>&nbsp;</span></th>
+                        <th><span>&nbsp;</span></th>
+                        <th><span>Minor Specialist</span></th>
+                        <th><span>Trained Minor Specialist</span></th>
+                        <th><span>&nbsp;</span></th>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <th>-2</th>
+                        <th>-1</th>
+                        <th>0</th>
+                        <th>+1</th>
+                        <th>+2</th>
+                        <th>+3</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <th>Awful(1)</th>
-                        <td>-1</td>
-                        <td>0</td>
-                        <td>n/a</td>
-                        <td>2</td>
-                        <td>n/a</td>
+                        <td className="c">-1</td>
+                        <td className="c">0</td>
+                        <td className="c">n/a</td>
+                        <td className="c">n/a</td>
+                        <td className="c">2<sup>**</sup></td>
+                        <td className="c">n/a</td>
                     </tr>
                     <tr>
                         <th>Poor (2)</th>
-                        <td>0</td>
-                        <td>1</td>
-                        <td>n/a</td>
-                        <td>3</td>
-                        <td>n/a</td>
+                        <td className="c">0</td>
+                        <td className="c">1</td>
+                        <td className="c">n/a</td>
+                        <td className="c">n/a</td>
+                        <td className="c">3<sup>**</sup></td>
+                        <td className="c">n/a</td>
                     </tr>
                     <tr>
                         <th>Average (3)</th>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
+                        <td className="c">1</td>
+                        <td className="c">2</td>
+                        <td className="c">3</td>
+                        <td className="c">4</td>
+                        <td className="c">5</td>
+                        <td className="c">6</td>
                     </tr>
                     <tr>
                         <th>Good (4)</th>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
+                        <td className="c">2</td>
+                        <td className="c">3</td>
+                        <td className="c">4</td>
+                        <td className="c">5</td>
+                        <td className="c">6</td>
+                        <td className="c">7</td>
                     </tr>
                     <tr>
                         <th>Great (5)</th>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>8</td>
+                        <td className="c">3</td>
+                        <td className="c">4</td>
+                        <td className="c">5</td>
+                        <td className="c">6</td>
+                        <td className="c">7</td>
+                        <td className="c">8</td>
                     </tr>
                     </tbody>
                 </table>
