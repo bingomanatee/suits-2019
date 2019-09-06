@@ -259,9 +259,8 @@ function Home() {
                         in an area of training than anyone else.
 
                         When you draw the specialist card you can choose any area of training
-                        of the same suit to apply it to. Optionally you can be a trained specialist; this takes two
-                        cards,
-                        giving you +1 in all skill areas in the training and +3 in one skill.
+                        of the same suit to apply it to. Optionally you can be a trained specialist;
+                        this costs 6 character points giving you +1 in all skill areas in the training and +3 in one skill.
                     </li>
                 </ul>
                 <p> You can act in areas you don't have training, at a -1 penalty. However,
@@ -344,6 +343,10 @@ function Home() {
                     (that they perform at +1)
                     and general aptitude at the rest (which they perform at +0.)
                     Still better than untrained attempts... but not much.)
+                </p>
+                <p>
+                    If "Focus" is in use, a "trained specialist" gets +3 in one Skill, +1 in another,
+                    and is +0 in the rest of the training area.
                 </p>
                 <h3>General Knowledge</h3>
                 <p>
