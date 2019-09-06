@@ -175,7 +175,7 @@ function Home() {
                     </tr>
                     <tr>
                         <th>2-4</th>
-                        <td>2, 3, or 6</td>
+                        <td>1, 2, 3, or 6</td>
                         <td><a href="/training/medical">Medical</a></td>
                         <td><a href="/training/construction">Construction</a></td>
                         <td><a href="/training/academic">Academic</a></td>
@@ -183,7 +183,7 @@ function Home() {
                     </tr>
                     <tr>
                         <th>5-7</th>
-                        <td>2, 3, or 6</td>
+                        <td>1, 2, 3, or 6</td>
                         <td><a href="/training/violence">Violence</a></td>
                         <td><a href="/training/craft">Craft</a></td>
                         <td><a href="/training/technical">Technical</a></td>
@@ -191,7 +191,7 @@ function Home() {
                     </tr>
                     <tr>
                         <th>8-10</th>
-                        <td>2, 3, or 6</td>
+                        <td>1, 2, 3, or 6</td>
                         <td><a href="/training/covert">Covert</a></td>
                         <td><a href="/training/travel">Travel</a></td>
                         <td><a href="/training/merchant">Merchant</a></td>
@@ -250,14 +250,12 @@ function Home() {
                     you can train in "Science" which includes it but that is as fine grained as these rules get.
                 </p>
                 <ul>
-                    <li>If you take a general training you have +1 in all the skills it includes.</li>
+                    <li>If you take a general training you have +1 in all the skills it includes. This costs 3 points.</li>
                     <li>
                         Optionally you can choose to <a name="specialist"/><b>Specialize</b>; you are +2 in <i>one</i> skill but no better
-                        at other skills in an area of training than anyone else.
+                        at other skills in an area of training than anyone else. Specialization costs 2 points.
                     </li>
-                    <li>
-                        Being a Specialist costs 2 points; broad training costs 3.
-                    </li>
+                    <li>Or, you can take +1 in one skill for 1 point - <b>"Minor Specialization"</b>.</li>
                     <li>
                          Optionally for 6 points you can be a trained specialist,
                         giving you +1 in all skill areas in the training and +3 in one skill.
