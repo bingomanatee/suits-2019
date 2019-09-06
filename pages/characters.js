@@ -142,18 +142,21 @@ function Home() {
                     </List.Item>
                 </List>
 
-                <h2>Development</h2>
-                <p>Development is a combination of education, social advantage, wealth and unique abilities.</p>
+                <h2>Designing a Character</h2>
+                <p>Character design is a combination of education, social advantage, wealth and unique abilities.</p>
                 <p>Most of it is the former: the set of skills and training you have achieved and/or been given.</p>
-                <p>To determine your character's abilities, draw six cards, one at a time,
-                    and take the abilities they resolve to. Cards that modify your basic abilities
-                    have a different "cost"; if you draw a Jack, for instance (-1) you get to two extra cards.
+                <p>
+                    You have 25 "card points"; draw cards and subtract/add the cards' cost from your point total
+                    until you have one or less points remaining. If you draw a card you cannot afford, take a card
+                    of a lesser value. For instance if you have 4 points left, and you draw a Jack of Spades,
+                    choose any spade Training card.
                 </p>
 
                 <table className="chart">
                     <thead>
                     <tr>
                         <th>&nbsp;</th>
+                        <th>Cost</th>
                         <th><Spade/></th>
                         <th><Club/></th>
                         <th><Diam/></th>
@@ -164,6 +167,15 @@ function Home() {
                     <tbody>
                     <tr>
                         <th>Ace</th>
+                        <td>-4</td>
+                        <td>Low (-1) Strength</td>
+                        <td>Low (-1) Speed</td>
+                        <td>Low (-1) Mind</td>
+                        <td>Low (-1) Will</td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td>2</td>
                         <td><a href="#specialist">Specialist (speed)</a></td>
                         <td><a href="#specialist">Specialist (body)</a></td>
                         <td><a href="#specialist">Specialist (mind)</a></td>
@@ -171,97 +183,72 @@ function Home() {
                     </tr>
 
                     <tr>
-                        <th>2-4</th>
+                        <th>3-6</th>
+                        <td>3</td>
                         <td><a href="/training/medical">Medical</a></td>
                         <td><a href="/training/construction">Construction</a></td>
                         <td><a href="/training/academic">Academic</a></td>
                         <td><a href="/training/cultural">Cultural</a></td>
                     </tr>
                     <tr>
-                        <th>8-10</th>
+                        <th>7-10</th>
+                        <td>3</td>
                         <td><a href="/training/covert">Covert</a></td>
                         <td><a href="/training/travel">Travel</a></td>
                         <td><a href="/training/merchant">Merchant</a></td>
                         <td><a href="/training/spiritual">Spiritual</a></td>
                     </tr>
                     <tr>
-                        <th>Jack (-1 card)</th>
-                        <td>Low (-1) Strength</td>
-                        <td>Low (-1) Speed</td>
-                        <td>Low (-1) Mind</td>
-                        <td>Low (-1) Will</td>
-                    </tr>
-                    <tr>
-                        <th>Queen(2 cards)</th>
+                        <th>Jack, Queen</th>
+                        <td>5</td>
                         <td>High (+1) Strength</td>
                         <td>High (+1) Speed</td>
                         <td>High (+1) Mind</td>
                         <td>High (+1) Will</td>
                     </tr>
                     <tr>
-                        <th>King(2 cards)</th>
-                        <td>Great (+2) Strength<br/> Low (-1) Other<sup>*</sup></td>
-                        <td>Great (+2) Speed<br/> Low (-1) Other<sup>*</sup></td>
-                        <td>Great (+2) Mind<br/> Low (-1) Other<sup>*</sup></td>
-                        <td>Great (+2) Will<br/> Low (-1) Other<sup>*</sup></td>
+                        <th>King</th>
+                        <td>12</td>
+                        <td>Great (+2) Strength</td>
+                        <td>Great (+2) Speed</td>
+                        <td>Great (+2) Mind</td>
+                        <td>Great (+2) Will</td>
                     </tr>
                     </tbody>
                 </table>
 
-                <h3>Maximum quality cards</h3>
+                <h3>Maximum Quality cards</h3>
+                <p>
+                    Improving a quality is a significant benefit having across-the-board payoffs. Because of this
+                    there are restrictions as to how you can improve Qualities due to card draws.
+                </p>
                 <ul>
                     <li>
-                        You can only have two modified Qualities, and they must be different ones.
+                        You cannot have two face cards of the same suit.
+                        If you draw a face card of the same suit, trade one of them for training within the same suit.
                     </li>
-
                     <li>
-                        You cannot have two face cards of the same suit. If you draw a face card of the same suit, discard one of them(your choice). discard and redraw
-                        your third or subsequent face cards.
+                        You can have a maximum of two boosted Qualities.
                     </li>
-
                     <li>
-                        You can redraw a second Jack <i>if you want</i>.
-                    </li>
-
-                    <li>
-                        You cannot have a King and a Queen. You can have a King and a Jack, two Queens,
-                        or a Queen and a Jack.
-                    </li>
-
-                    <li>
-                        <sup>*</sup> If you draw a King, the next card is treated as if it were a Jack.
+                        You can have a maximum of one King.
                     </li>
                 </ul>
 
-                <table className="chart compact">
-                    <thead>
-                    <tr>
-                        <td>First Card</td>
-                        {variations.map(v => <td key={v}><Describe card={v}/></td>)}
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {variations.map(v => <tr>
-                        <th><Describe card={v}></Describe></th>
-                        {variations.map(v2 => <td><Resolve first={v} second={v2}></Resolve></td>)}
-                    </tr>)}
-                    </tbody>
-                </table>
-
                 <h3>Ability and Training</h3>
                 <p>Your numeric rank in an area <i>you have training in</i>
-                    is the sum of the base quality and your general training and specialty in it. A note on
-                    vocabulary:
-                    an area of training -- aka "College" or "field" -- is a broad set of skills around related
-                    tasks.
-                    Each contain Specializations that are smaller focused areas within a training school. These are
-                    called
-                    "Skills" in these rules, which is inexact; they are a small cluster of skills. There is no way
-                    in
-                    Suits
-                    to train and focus on a truly singular skill like "Physics" - you can train in "Science" which
-                    includes it
-                    but that is as fine grained as these rules get.
+                    is the sum of the base quality and your general training and specialty in it. That number
+                    is used in <a href="/contests">Contests and Tasks</a> to determine your effectiveness.
+                    As a good index, an average person is rank 5 in the area of their specialty, succeeding 50%
+                    of the time. A high quality trained specialist is rank 8, and succeeds 73% of the time.
+                </p>
+                <h4>A note on terminology</h4>
+                <p>
+                    An area of <b>training</b> -- aka "College" or "field" -- is a broad set of skills around related
+                    tasks. Each contain Specializations that are smaller focused areas within a training school.
+                    These are called "Skills" in these rules, which is inexact; they are a small cluster of skills.
+                    There is no way in Suits to train and focus on a truly singular skill like "Physics" -
+                    you can train in "Science" which includes it but that is as fine grained as these rules get.
                 </p>
                 <ul>
                     <li>If you take a general training you have +1 in all the skills it includes.</li>
@@ -350,13 +337,17 @@ function Home() {
                     </tbody>
                 </table>
                 <h3>(optional) "Focused" training</h3>
-                <p>Many of these training areas have skills and knowledge so broad that
-                    its unrealistic to assume broad knowledge across the entire field. To balance
-                    play, assume that characters have a "Focus" of two skills (that they perform at +1)
-                    and general aptitude at the rest (which they perform at +0.
-                    Still better than untrained attempts... but not much.)</p>
+                <p>
+                    Many of these training areas have skills and knowledge so broad that
+                    its unrealistic to assume broad knowledge across the entire field.
+                    To balance play, assume that characters have a "Focus" of two skills
+                    (that they perform at +1)
+                    and general aptitude at the rest (which they perform at +0.)
+                    Still better than untrained attempts... but not much.)
+                </p>
                 <h3>General Knowledge</h3>
-                <p>Training indicates ability to perform unusual or difficult acts; its not to say
+                <p>
+                    Training indicates ability to perform unusual or difficult acts; its not to say
                     characters don't have basic competency outside these areas. A modern character
                     will be able to drive, read, and use the internet competently. A pre-modern one
                     will be able to ride a horse, manage short trips outdoors and cook a meal.
