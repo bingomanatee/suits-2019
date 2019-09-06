@@ -17,6 +17,8 @@ function Home() {
           <li><b>Ranged</b> including guns and bows, and throwing</li>
           <li><b>Weapons</b> - handheld knives axes etc</li>
           <li><b>Unarmed</b> - boxing, martial arts and wrestling.</li>
+          <li><b>Sport</b> - ability to operate within game rules to win points, usually with balls.</li>
+          <li><b>Military</b> - training in group tactics, team weapons (catapult, cannon) and military culture</li>
         </ul>
       </article>
     </main>

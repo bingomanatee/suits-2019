@@ -174,25 +174,24 @@ function Home() {
                         <td>Low (-1) Will</td>
                     </tr>
                     <tr>
-                        <th>2</th>
-                        <td>2</td>
-                        <td><a href="#specialist">Specialist (speed)</a></td>
-                        <td><a href="#specialist">Specialist (body)</a></td>
-                        <td><a href="#specialist">Specialist (mind)</a></td>
-                        <td><a href="#specialist">Specialist (will)</a></td>
-                    </tr>
-
-                    <tr>
-                        <th>3-6</th>
-                        <td>3</td>
+                        <th>2-4</th>
+                        <td>2, 3, or 6</td>
                         <td><a href="/training/medical">Medical</a></td>
                         <td><a href="/training/construction">Construction</a></td>
                         <td><a href="/training/academic">Academic</a></td>
                         <td><a href="/training/cultural">Cultural</a></td>
                     </tr>
                     <tr>
-                        <th>7-10</th>
-                        <td>3</td>
+                        <th>5-7</th>
+                        <td>2, 3, or 6</td>
+                        <td><a href="/training/violence">Violence</a></td>
+                        <td><a href="/training/craft">Craft</a></td>
+                        <td><a href="/training/technical">Technical</a></td>
+                        <td><a href="/training/creative">Creative</a></td>
+                    </tr>
+                    <tr>
+                        <th>8-10</th>
+                        <td>2, 3, or 6</td>
                         <td><a href="/training/covert">Covert</a></td>
                         <td><a href="/training/travel">Travel</a></td>
                         <td><a href="/training/merchant">Merchant</a></td>
@@ -253,14 +252,15 @@ function Home() {
                 <ul>
                     <li>If you take a general training you have +1 in all the skills it includes.</li>
                     <li>
-                        <a name="specialist"/>If you <b>Specialize</b> you are +2 in <i>one</i> skill but no better
-                        at
-                        other skills
-                        in an area of training than anyone else.
-
-                        When you draw the specialist card you can choose any area of training
-                        of the same suit to apply it to. Optionally you can be a trained specialist;
-                        this costs 6 character points giving you +1 in all skill areas in the training and +3 in one skill.
+                        Optionally you can choose to <a name="specialist"/><b>Specialize</b>; you are +2 in <i>one</i> skill but no better
+                        at other skills in an area of training than anyone else.
+                    </li>
+                    <li>
+                        Being a Specialist costs 2 points; broad training costs 3.
+                    </li>
+                    <li>
+                         Optionally for 6 points you can be a trained specialist,
+                        giving you +1 in all skill areas in the training and +3 in one skill.
                     </li>
                 </ul>
                 <p> You can act in areas you don't have training, at a -1 penalty. However,
