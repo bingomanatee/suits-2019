@@ -23,7 +23,8 @@ function Contests() {
                     <li>
                         <b>Black face cards (Jack Queen, King)</b> are almost always automatic victory; their numerical
                         values are
-                        0, -1, and -2 respectively. Meaning even someone with a skill rating of 0 can succeed by drawing
+                        -1, -3, and -5 respectively. Meaning even someone with a skill rating of 0 can succeed by
+                        drawing
                         a black face card.
                     </li>
                     <li>
@@ -32,6 +33,57 @@ function Contests() {
                         12, 14, 16 respectively. this means even highly skilled attempts sometimes fail.
                     </li>
                 </ul>
+                <h3>Tasks</h3>
+                <p>Some activities are more about <i>when</i> than <i>if</i>. Mundane tasks, if they fail, take longer
+                    or use more material, but unless you draw a red suit, are eventually achieved. In physical contests,
+                   a major failure decreases your Saving Check Power by 1, and a major success decreases your <i>opponent's</i>
+                    {' '} Saving Check Power by 1.
+                </p>
+                <h3>Major Success</h3>
+                <p>If the average person draws a Black Face card or lower.
+                    Chances of major successes become rarer due to poor skill, as shown on the chart.</p>
+                <h4>Major Failures</h4>
+                <p>The average person has a major failure on a red Jack or higher.
+                    Chances of major failures increase and decrease for people of better or worse skills,
+                    but a Black King is always calamity.</p>
+                <p>Note - major success and failure chances don't vary due to minor (+/-2) modifiers.
+                    They have to do more with your overall skill than with local circumstances.</p>
+                <table className="chart">
+                    <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>Major Success</th>
+                        <th>Major Failure</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Awful(1)</th>
+                            <td>Black King</td>
+                            <td>9+</td>
+                        </tr>
+                        <tr>
+                            <th>Poor (2)</th>
+                            <td>Black Queen</td>
+                            <td>10+</td>
+                        </tr>
+                        <tr>
+                            <th>Average (3)</th>
+                            <td>Black Jack</td>
+                            <td>Red Jack</td>
+                        </tr>
+                        <tr>
+                            <th>Good (4)</th>
+                            <td>...Black Ace</td>
+                            <td>Red Queen+</td>
+                        </tr>
+                        <tr>
+                            <th>Great (5)</th>
+                            <td>...2</td>
+                            <td>Red King</td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <h3>Modifiers</h3>
                 <p>Not all tasks are created equal. A <i>very simple</i> task gives you +2 to your ranking;
@@ -53,7 +105,7 @@ function Contests() {
                     skill.
                 </p>
                 <ul>
-                    <li> In mental contests the power Quality is <i>Will</i>.
+                    <li> In mental contests the power Quality is <b>Will</b>.
                     </li>
                     <li> In physical contests it is <b>Body</b>.</li>
                 </ul>
@@ -99,19 +151,21 @@ function Contests() {
                         whichever is worse -- minimum 1.
                     </li>
                     <li>
-                        If the result is twice their Power (or more) they are <i>Dying/Unconscious</i>. Without care
+                        If the result is over twice their Power they are <i>Dying/Unconscious</i>. Without care
                         they may be
                         rendered <i>Dead/Comatose</i> - which also happens if they suffer further trauma. They will have
                         to draw
                         under their power each day to <i>stabilize</i>; at which point a second success renders
                         them <i>wounded</i>.
-                        Two failures in a row, unfortunately, is lethal.
+                        Two failures in a row, unfortunately, is lethal. Immediate (successful) medical attention
+                        can reduce a Dying person to <i>Wounded</i> status.
                     </li>
                     <li>
                         If the result is three times their Body, they are done in -- dead, or mentally destroyed.
                     </li>
                 </ul>
-                <p>The below table shows the result by card and quality:</p>
+                <p>The below table shows the result by card and quality. Note in all cases,
+                    a red face card means you are just injured/fatigued.</p>
 
                 <table className="chart">
                     <thead>
@@ -126,48 +180,51 @@ function Contests() {
                     <tbody>
                     <tr>
                         <th>Awful(1)</th>
-                        <td>A</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4+</td>
+                        <td className="c">...A</td>
+                        <td className="c">2</td>
+                        <td className="c">3</td>
+                        <td className="c">4+</td>
                     </tr>
                     <tr>
                         <th>Poor (2)</th>
-                        <td>2</td>
-                        <td>4</td>
-                        <td>6</td>
-                        <td>8+</td>
+                        <td className="c">..2</td>
+                        <td className="c">3-4</td>
+                        <td className="c">5-6</td>
+                        <td className="c">7+</td>
                     </tr>
                     <tr>
                         <th>Average (3)</th>
-                        <td>3</td>
-                        <td>6</td>
-                        <td>9</td>
-                        <td>10+</td>
+                        <td className="c">...3</td>
+                        <td className="c">4-6</td>
+                        <td className="c">7-9</td>
+                        <td className="c">10+</td>
                     </tr>
                     <tr>
                         <th>Good (4)</th>
-                        <td>4</td>
-                        <td>8</td>
-                        <td>Black Jack</td>
-                        <td>Black Queen+</td>
+                        <td className="c">..4</td>
+                        <td className="c">5-8</td>
+                        <td className="c">9..Black Jack</td>
+                        <td className="c">Black Queen+</td>
                     </tr>
                     <tr>
                         <th>Great (5)</th>
-                        <td>5</td>
-                        <td>10</td>
-                        <td>Black Queen</td>
-                        <td>Black King</td>
+                        <td className="c">...5</td>
+                        <td className="c">6-10</td>
+                        <td className="c">Black Jack, Black Queen</td>
+                        <td className="c">Black King</td>
                     </tr>
                     <tr>
                         <th>Awesome (6)</th>
-                        <td>6</td>
-                        <td>Black Jack</td>
-                        <td>Black Queen</td>
-                        <td>Black King</td>
+                        <td className="c">...6</td>
+                        <td className="c">7..Black Jack</td>
+                        <td className="c">Black Queen</td>
+                        <td className="c">Black King</td>
                     </tr>
                     </tbody>
                 </table>
+                <p>This table is oriented towards physical attacks; mental
+                    constests are generally less harmful having little if any
+                    blowback for the losers.</p>
                 <h3>Damage Check modifiers</h3>
                 <p>A range of circumstances can modify your Quality when it comes to a Damage Check.</p>
                 <ul>
